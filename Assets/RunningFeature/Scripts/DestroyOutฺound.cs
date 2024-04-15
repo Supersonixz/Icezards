@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DestroyOutฺound : MonoBehaviour
 {
-    public float lowerBound = -5;
+    public float lowerBound = -8;
     // Start is called before the first frame update
     void Start()
     {
