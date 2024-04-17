@@ -4,15 +4,58 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private float CurrentmaxHP = 100;
+    private float currentHP = 100;
+
+    public float MaxHP
     {
-        
+        get
+        {
+            return CurrentmaxHP;
+        }
+        set
+        {
+            CurrentmaxHP = value;
+        }
+    }
+   
+    public float CurrentHP
+    {
+        get
+        {
+            return currentHP;
+        }
+        set
+        {
+            currentHP = value;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public Health(float maxHP, float HP)
     {
-        
+        CurrentmaxHP = maxHP;
+        currentHP = HP;
     }
+
+    public void DmgUnit(float damage)
+    {
+        if (currentHP > 0)
+        {
+            currentHP -= damage;
+        }
+    }
+
+    public void HealingUnit(float HealinPoint)
+    {
+        if (currentHP < CurrentmaxHP)
+        {
+            currentHP += HealinPoint;
+        }
+
+        if (currentHP > CurrentmaxHP)
+        {
+            currentHP = CurrentmaxHP;
+        }
+    }
+    
 }
