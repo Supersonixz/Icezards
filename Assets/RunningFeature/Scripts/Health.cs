@@ -7,6 +7,12 @@ public class Health : MonoBehaviour
     private float CurrentmaxHP = 100;
     private float currentHP = 100;
 
+    private void OnEnable()
+    {
+        CurrentmaxHP = 100;
+        currentHP = 100;
+    }
+
     public float MaxHP
     {
         get

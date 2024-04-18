@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set;}
+    public PlayerBehavior player;
+    private float timeLimit;
 
     private bool isStarted;
 
@@ -15,8 +17,20 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        player.OnPlayerDie += OnPlayerDead;
         CutsceneTrigerer.Instance.onStartIntroFinished += OnGameStart;
         CutsceneTrigerer.Instance.onEndIntroFinished += OnNewGame;
+    }
+
+    private void Update()
+    {
+        if (isStarted) {
+            timeLimit -= Time.deltaTime;
+            if(timeLimit <= 0)
+            {
+                OnGameEnd();
+            }
+        }
     }
 
     public bool IsStarted()
@@ -33,18 +47,34 @@ public class GameManager : MonoBehaviour
     private void OnGameStart()
     {
         Debug.Log("Game is now start");
-        isStarted = true;
+        StartCoroutine(DelayedStartGame());
+        player.ResetPlayerHealth();
         CameraMover.Instance.StartMove();
+        timeLimit = 30;
     }
 
-    private void OnGameEnd()
+
+    IEnumerator DelayedStartGame()
     {
-        //isStarted = false;
+        yield return new WaitForSeconds(1);
+        isStarted = true;
+    }
+
+    public void OnGameEnd()
+    {
+        Debug.Log("On game end");
         CutsceneTrigerer.Instance.PlayWinEnding();
+        isStarted = false;
+    }
+    public void OnPlayerDead()
+    {
+        Debug.Log("On player dead");
+        CutsceneTrigerer.Instance.PlayLoseEnding();
+        isStarted = false;
     }
 
     private void OnNewGame()
     {
-        //Show day 2, 3, 4
+        StartGame();
     }
 }

@@ -36,7 +36,8 @@ public class CutscenePlayer : MonoBehaviour
 
     public void StartPlay()
     {
-        for(int i = 0;i< cutsceneComponents.Length; i++) { 
+        mainImage.color = new Color(1, 1, 1, 0);
+        for (int i = 0;i< cutsceneComponents.Length; i++) { 
             cutsceneComponents[i].targetImage.color = new Color(1, 1, 1, 1);
             Transform t = cutsceneComponents[i].targetImage.transform;
             for (int j = 0; j < t.childCount; j++)
@@ -85,7 +86,6 @@ public class CutscenePlayer : MonoBehaviour
         LeanTween.alphaCanvas(canvasGroup, 0, 1);
         LeanTween.color(mainImage.rectTransform, new Color(1, 1, 1, 0), 0.75f);
         onCutsceneEnded?.Invoke();
-        mainImage.color = new Color(1, 1, 1, 0);
         index = -1;
     }
 

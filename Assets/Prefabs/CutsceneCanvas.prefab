@@ -1637,7 +1637,7 @@ MonoBehaviour:
     fadeTime: 1
     extraDelay: 0
   delayTime: 1
-  mainImage: {fileID: 1761845666373300079}
+  mainImage: {fileID: 8306419566400065830}
 --- !u!1 &6297437824805349865
 GameObject:
   m_ObjectHideFlags: 0
