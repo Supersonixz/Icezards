@@ -6,7 +6,7 @@ public class PlayerControllerr : MonoBehaviour
 {
     private float horizontalInput;
     private float speed = 5;
-    private float xRange = 2;
+    private float xRange = .8f;
 
     // Update is called once per frame
     void Update()

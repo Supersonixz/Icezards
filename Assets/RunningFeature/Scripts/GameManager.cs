@@ -4,24 +4,47 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager gameManager { get; private set;}
-    public Health playerHealth = new Health(100, 100);
+    public static GameManager Instance { get; private set;}
+
+    private bool isStarted;
+
     void Awake()
     {
-        //Health playerHealth = gameObject.AddComponent(typeof(Health)) as Health;
-        if (gameManager != null)
-        {
-            Destroy(gameManager);
-        } 
-        else
-        {
-            gameManager = new GameManager();
-            Debug.Log("created");
-        }
+        Instance = this;
     }
 
     private void Start()
     {
+        CutsceneTrigerer.Instance.onStartIntroFinished += OnGameStart;
+        CutsceneTrigerer.Instance.onEndIntroFinished += OnNewGame;
+    }
+
+    public bool IsStarted()
+    {
+        return isStarted;
+    }
+
+
+    public void StartGame()
+    {
         CutsceneTrigerer.Instance.PlayIntro();
+    }
+
+    private void OnGameStart()
+    {
+        Debug.Log("Game is now start");
+        isStarted = true;
+        CameraMover.Instance.StartMove();
+    }
+
+    private void OnGameEnd()
+    {
+        //isStarted = false;
+        CutsceneTrigerer.Instance.PlayWinEnding();
+    }
+
+    private void OnNewGame()
+    {
+        //Show day 2, 3, 4
     }
 }

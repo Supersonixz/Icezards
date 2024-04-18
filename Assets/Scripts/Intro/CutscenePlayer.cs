@@ -24,10 +24,13 @@ public class CutscenePlayer : MonoBehaviour
     private float nextPlayTime;
     private CanvasGroup canvasGroup;
     private CutsceneComponent currentPlaying;
+    public Image mainImage;
+
     private void Awake()
     {
         canvasGroup = GetComponent<CanvasGroup>();
         canvasGroup.alpha = 0;
+        mainImage.color = new Color(1, 1, 1, 0);
         index = -1;
     }
 
@@ -51,6 +54,7 @@ public class CutscenePlayer : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         LeanTween.alphaCanvas(canvasGroup, 1, 1);
+        LeanTween.color(mainImage.rectTransform, new Color(1, 1, 1, 1), 0.25f).setDelay(0.75f);
     }
 
     private void Update()
@@ -79,7 +83,9 @@ public class CutscenePlayer : MonoBehaviour
     public void End()
     {
         LeanTween.alphaCanvas(canvasGroup, 0, 1);
+        LeanTween.color(mainImage.rectTransform, new Color(1, 1, 1, 0), 0.75f);
         onCutsceneEnded?.Invoke();
+        mainImage.color = new Color(1, 1, 1, 0);
         index = -1;
     }
 

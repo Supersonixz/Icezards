@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -455,6 +455,7 @@ MonoBehaviour:
     fadeTime: 1
     extraDelay: 0
   delayTime: 1
+  mainImage: {fileID: 848308939468576633}
 --- !u!1 &2475030945683856994
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,6 +694,7 @@ MonoBehaviour:
     fadeTime: 1
     extraDelay: 0
   delayTime: 1
+  mainImage: {fileID: 1086362571898458152}
 --- !u!1 &2644335605610028583
 GameObject:
   m_ObjectHideFlags: 0
@@ -1434,7 +1436,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &2539741013043912197
 MonoBehaviour:
@@ -1635,6 +1637,7 @@ MonoBehaviour:
     fadeTime: 1
     extraDelay: 0
   delayTime: 1
+  mainImage: {fileID: 1761845666373300079}
 --- !u!1 &6297437824805349865
 GameObject:
   m_ObjectHideFlags: 0
@@ -2248,7 +2251,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 593.19, y: 294.11}
+  m_AnchoredPosition: {x: 593.19, y: 278}
   m_SizeDelta: {x: 733.63, y: 431.447}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5814087976184225906
@@ -2369,6 +2372,7 @@ MonoBehaviour:
     fadeTime: 1
     extraDelay: 0
   delayTime: 1
+  mainImage: {fileID: 5114782554055658981}
 --- !u!1 &8343563750626624184
 GameObject:
   m_ObjectHideFlags: 0

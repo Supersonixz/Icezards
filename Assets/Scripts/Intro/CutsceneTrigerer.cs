@@ -22,7 +22,7 @@ public class CutsceneTrigerer : MonoBehaviour
 
     private void Start()
     {
-        background.color = new Color(1, 1, 1, 0);
+        //background.color = new Color(1, 1, 1, 0);
         intro_1.onCutsceneEnded += OnFirstIntroEnded;
         intro_2.onCutsceneEnded += OnStartIntroEnd;
         win_ending.onCutsceneEnded += OnEndIntroEnd;
