@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerBehavior : MonoBehaviour
 {
     [SerializeField] HealthBar _healthbar;
+    private int dot = 1; //dot = damage over time
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,8 @@ public class PlayerBehavior : MonoBehaviour
         {
             PlayerHeal(20);
         }
+
+        PlayerTakeDmg(Time.deltaTime * dot);
         
     }
 
