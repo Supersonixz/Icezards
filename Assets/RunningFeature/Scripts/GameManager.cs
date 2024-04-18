@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set;}
     public PlayerBehavior player;
+    public GameObject playerObj;
     private float timeLimit;
 
     private bool isStarted;
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        playerObj.SetActive(false);
         player.OnPlayerDie += OnPlayerDead;
         CutsceneTrigerer.Instance.onStartIntroFinished += OnGameStart;
         CutsceneTrigerer.Instance.onEndIntroFinished += OnNewGame;
@@ -48,6 +50,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Game is now start");
         StartCoroutine(DelayedStartGame());
+        playerObj.SetActive(true);
         player.ResetPlayerHealth();
         CameraMover.Instance.StartMove();
         timeLimit = 30;
