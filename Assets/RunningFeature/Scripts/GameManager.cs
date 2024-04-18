@@ -19,4 +19,9 @@ public class GameManager : MonoBehaviour
             Debug.Log("created");
         }
     }
+
+    private void Start()
+    {
+        CutsceneTrigerer.Instance.PlayIntro();
+    }
 }

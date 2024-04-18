@@ -32,14 +32,14 @@ public class PlayerBehavior : MonoBehaviour
     {
         GameManager.gameManager.playerHealth.DmgUnit(damage);
         _healthbar.setHealth(GameManager.gameManager.playerHealth.CurrentHP);
-        Debug.Log(GameManager.gameManager.playerHealth.CurrentHP);
+      //  Debug.Log(GameManager.gameManager.playerHealth.CurrentHP);
     }
 
     private void PlayerHeal(float healing)
     {
         GameManager.gameManager.playerHealth.HealingUnit(healing);
         _healthbar.setHealth(GameManager.gameManager.playerHealth.CurrentHP);
-        Debug.Log(GameManager.gameManager.playerHealth.CurrentHP);
+      //  Debug.Log(GameManager.gameManager.playerHealth.CurrentHP);
     }
 
     void OnTriggerEnter(Collider other)
