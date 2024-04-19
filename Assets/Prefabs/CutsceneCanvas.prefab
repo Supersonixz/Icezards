@@ -453,7 +453,7 @@ MonoBehaviour:
     extraDelay: 0
   - targetImage: {fileID: 5302430676372126168}
     fadeTime: 1
-    extraDelay: 0
+    extraDelay: 2
   delayTime: 1
   mainImage: {fileID: 848308939468576633}
 --- !u!1 &2475030945683856994
@@ -2370,7 +2370,7 @@ MonoBehaviour:
     extraDelay: 0
   - targetImage: {fileID: 7020405952979334840}
     fadeTime: 1
-    extraDelay: 0
+    extraDelay: 2
   delayTime: 1
   mainImage: {fileID: 5114782554055658981}
 --- !u!1 &8343563750626624184

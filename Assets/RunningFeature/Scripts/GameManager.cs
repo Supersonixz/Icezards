@@ -43,34 +43,39 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        MusicPlayer.Get().PlayMusic(Music.intro);
         CutsceneTrigerer.Instance.PlayIntro();
     }
 
     private void OnGameStart()
     {
         Debug.Log("Game is now start");
-        StartCoroutine(DelayedStartGame());
+        StartCoroutine(DelayedStartGame(1));
         playerObj.SetActive(true);
         player.ResetPlayerHealth();
         CameraMover.Instance.StartMove();
-        timeLimit = 30;
     }
 
 
-    IEnumerator DelayedStartGame()
+    IEnumerator DelayedStartGame(float delay)
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(delay);
+        MusicPlayer.Get().PlayMusic(Music.run);
+        timeLimit = 60;
         isStarted = true;
     }
 
     public void OnGameEnd()
     {
+        MusicPlayer.Get().PlayMusic(Music.victory);
         Debug.Log("On game end");
         CutsceneTrigerer.Instance.PlayWinEnding();
         isStarted = false;
     }
+
     public void OnPlayerDead()
     {
+        MusicPlayer.Get().PlayMusic(Music.lose);
         Debug.Log("On player dead");
         CutsceneTrigerer.Instance.PlayLoseEnding();
         playerObj.SetActive(false);
@@ -79,6 +84,12 @@ public class GameManager : MonoBehaviour
 
     private void OnNewGame()
     {
+        StartCoroutine(DelayedRestartGame(1));
+    }
+
+    IEnumerator DelayedRestartGame(float delay)
+    {
+        yield return new WaitForSeconds(delay);
         StartGame();
     }
 }

@@ -31,21 +31,21 @@ public class CutsceneTrigerer : MonoBehaviour
 
     public void PlayIntro()
     {
-        LeanTween.cancel(background.rectTransform);
+        LeanTween.cancel(background.gameObject);
         LeanTween.color(background.rectTransform, new Color(1, 1, 1, 1), 0.5f);
         intro_1.StartPlay();
     }
 
     public void PlayWinEnding()
     {
-        LeanTween.cancel(background.rectTransform);
+        LeanTween.cancel(background.gameObject);
         LeanTween.color(background.rectTransform, new Color(1, 1, 1, 1), 0.5f);
         win_ending.StartPlay();
     }
 
     public void PlayLoseEnding()
     {
-        LeanTween.cancel(background.rectTransform);
+        LeanTween.cancel(background.gameObject);
         LeanTween.color(background.rectTransform, new Color(1, 1, 1, 1), 0.5f);
         lost_ending.StartPlay();
     }
