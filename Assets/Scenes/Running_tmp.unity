@@ -1533,6 +1533,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6777805092586870095, guid: 1570b57f5ef4e504d88dcbe05f012169,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6994019862348060844, guid: 1570b57f5ef4e504d88dcbe05f012169,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1946,6 +1951,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CutsceneCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6777805092586870095, guid: 1c33a2776136671468f8fa7f8f4055b3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

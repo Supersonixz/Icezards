@@ -73,6 +73,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("On player dead");
         CutsceneTrigerer.Instance.PlayLoseEnding();
+        playerObj.SetActive(false);
         isStarted = false;
     }
 
